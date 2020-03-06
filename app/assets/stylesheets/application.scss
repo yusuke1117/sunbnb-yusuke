@@ -1,0 +1,23 @@
+@import "bootstrap";
+@import "font-awesome";
+
+.signup {
+    margin: auto;
+}
+
+.btn-flat-simple {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #ECECEC;
+    background: #000000;
+    transition: .4s;
+    width: 200px;
+  }
+  
+  .btn-flat-simple:hover {
+    background: #ECECEC;
+    color:  #000000;
+  }

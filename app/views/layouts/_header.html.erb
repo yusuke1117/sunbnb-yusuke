@@ -7,34 +7,39 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <% if user_signed_in? %>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <%= current_user.email %>
-                    </a>
-  
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Manage Listing</a>
-                        <a class="dropdown-item" href="#">List Your Space</a>
-                        <a class="dropdown-item" href="#">Your Reservations</a>
-                        <a class="dropdown-item" href="#">Your Tripss</a>
-
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Edit Profile</a>
-                        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+    <div class="ml-auto">
+        <div class="collapse navbar-collapse nav-item" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-item">
+                <% if user_signed_in? %>
+                    <div class="nav-item mr-2">
+                        <%= image_tag avatar_url(current_user), class: "rounded-circle" %>
                     </div>
-                </li>
-            <% else %>
-                <div class="nav-item">
-                    <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %></a>
-                </div>
-                <div class="nav-item">
-                    <%= link_to "Login", new_user_session_path, class: "nav-link" %></a>
-                </div>
-            <% end %>
-        </ul>
+                    <div class="nav-item mr-5 mt-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <%= current_user.name %>
+                            </a>
+                        <li class="nav-item dropdown">
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Manage Listing</a>
+                                <a class="dropdown-item" href="#">List Your Space</a>
+                                <a class="dropdown-item" href="#">Your Reservations</a>
+                                <a class="dropdown-item" href="#">Your Tripss</a>
+                                    <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Edit Profile</a>
+                                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                            </div>
+                        </li>
+                    </div>    
+                <% else %>
+                    <div class="nav-item">
+                        <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %></a>
+                    </div>
+                    <div class="nav-item">
+                        <%= link_to "Login", new_user_session_path, class: "nav-link" %></a>
+                    </div>
+                <% end %>
+            </ul>
+        </div>
     </div>
+    
 </nav>

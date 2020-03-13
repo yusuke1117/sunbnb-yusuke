@@ -1,9 +1,11 @@
 <div class="container">
     <div class="col-md-12">
         <div class="card mt-5">
-            <strong><div class="card-header bg-success text-light text-center">
-                Create your beautiful place
-            </div><strong>
+            <strong>
+                <div class="card-header bg-success text-light text-center">
+                    Create your beautiful place
+                </div>
+            <strong>
             <div class="p-3">
                 <%= form_for @room do |f| %>
                     <div class="row">
@@ -31,10 +33,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <%= f.submit class: "btn btn-outline-success my-2 my-sm-0 ml-3" %>
+                        <%= f.submit "Create rooms", class: "btn btn-outline-success my-2 my-sm-0 ml-3" %>
                     </div>
                 <% end %>
             </div>    
         </div>   
-    <div>
+    </div>
 </div>

@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+         <%= render "rooms/sidebar"%>
+        </div>
+        <div class="col-md-4">
+            <div class="card mt-3" style="width: 50rem;">
+                <strong><div class="card-header bg-success text-light">
+                    Description
+                </div><strong>
+                <div class="p-4">
+                    <%= form_for @room do |f| %>
+                        <div class="form-group">
+                            <%= f.label :Listingname %>
+                            <p><%= f.text_field :name, placeholder: "What is your listing name", class:"form-control" %></p>
+                        </div>
+                        <div class="form-group">
+                            <%= f.label :Summary %>
+                            <%= f.text_area :summary, rows: 5, placeholder: "Sammary of your house", class: "form-control" %>
+                        </div>
+                        <div class="row">
+                            <%= f.submit "Save", class: "btn btn-outline-success my-2 my-sm-0 ml-3" %>
+                        </div>
+                    <% end %>
+                </div>        
+            </div>    
+        </div>
+    </div>
+</div>

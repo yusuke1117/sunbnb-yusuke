@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'rooms/new'
   root 'pages#home'
 
   devise_for :users, controllers: {
@@ -10,7 +9,17 @@ Rails.application.routes.draw do
 
   }
 
-  resources :rooms
+  resources :rooms do
+    member do
+      get 'listing'
+      get 'price'
+      get 'description'
+      get 'photo'
+      get 'amenity'
+      get 'location'
+    end
+  end
+
   resources :users, only: [:show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

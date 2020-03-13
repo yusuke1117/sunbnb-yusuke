@@ -1,0 +1,43 @@
+<div class="card mt-3">
+    <div class="card-body p-3">
+        <% if current_user.provider? %>
+            <p><%= link_to "Listing", listing_room_path(current_user), class: "sidelink" %><i class="fa fa-check float-right"></i></p>
+        <% else %>
+            <p><%= link_to "Listing", listing_room_path(current_user), class: "sidelink" %><i class="fa fa-times-circle float-right"></i></p>
+        <% end %>
+
+         <% if current_user.provider? %>
+            <p><%= link_to "Price", price_room_path(current_user), class: "sidelink" %><i class="fa fa-check float-right"></i></p>
+        <% else %>
+            <p><%= link_to "Price", price_room_path(current_user), class: "sidelink" %><i class="fa fa-times-circle float-right"></i></p>
+        <% end %>
+
+         <% if current_user.provider? %>
+            <p><%= link_to "Description", description_room_path(current_user), class: "sidelink" %><i class="fa fa-check float-right"></i></p>
+        <% else %>
+            <p><%= link_to "Description", description_room_path(current_user), class: "sidelink" %><i class="fa fa-times-circle float-right"></i></p>
+        <% end %>
+
+         <% if current_user.provider? %>
+           <p><%= link_to "Photos", photo_room_path(current_user), class: "sidelink" %><i class="fa fa-check float-right"></i></p>
+        <% else %>
+            <p><%= link_to "Photos", photo_room_path(current_user), class: "sidelink" %><i class="fa fa-times-circle float-right"></i></p>
+        <% end %>
+
+        <% if current_user.provider? %>
+            <p><%= link_to "Amenities", amenity_room_path(current_user), class: "sidelink" %><i class="fa fa-check float-right"></i></p>
+        <% else %>
+            <p><%= link_to "Amenities", amenity_room_path(current_user), class: "sidelink" %><i class="fa fa-times-circle float-right"></i></p>
+        <% end %>
+
+        <% if current_user.phone_number? %>
+            <p class="mb-1"><%= link_to "Location", location_room_path(current_user), class: "sidelink" %><i class="fa fa-check float-right"></i></p>
+        <% else %>
+            <p class="mb-1"><%= link_to "Location", location_room_path(current_user), class: "sidelink" %><i class="fa fa-times-circle float-right"></i></p>
+        <% end %>
+            <div class="dropdown-divider"></div>
+         <div class="col-md-6 offset-md-3 mt-3">
+            <%= link_to "Publish", new_room_path(current_user), class: "btn btn-outline-success" %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+         <%= render "rooms/sidebar"%>
+        </div>
+        <div class="col-md-4">
+            <div class="card mt-3" style="width: 50rem;">
+                <strong><div class="card-header bg-success text-light">
+                    Amenities
+                </div><strong>
+                <div class="p-4">
+                    <%= form_for @room do |f| %>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <%= f.label :TV %>
+                                    <%= f.check_box :has_TV %>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <%= f.label :Kitchen %>
+                                    <%= f.check_box :has_kitchen %>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <%= f.label :Internet %>
+                                    <%= f.check_box :has_internet %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <%= f.label :Heating %>
+                                    <%= f.check_box :hasheating %>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <%= f.label :Airconditioning %>
+                                    <%= f.check_box :has_air_conditioning %>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="row">
+                        <%= f.submit "Save", class: "btn btn-outline-success my-2 my-sm-0 ml-3" %>
+                    </div>
+                    <% end %>
+                </div>        
+            </div>    
+        <div>
+    <div>
+</div>

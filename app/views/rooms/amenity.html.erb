@@ -1,13 +1,15 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-         <%= render "rooms/sidebar"%>
+            <%= render "rooms/sidebar"%>
         </div>
         <div class="col-md-4">
             <div class="card mt-3" style="width: 50rem;">
-                <strong><div class="card-header bg-success text-light">
+                <strong>
+                    <div class="card-header bg-success text-light">
                     Amenities
-                </div><strong>
+                    </div>
+                <strong>
                 <div class="p-4">
                     <%= form_for @room do |f| %>
                         <div class="row">
@@ -50,6 +52,6 @@
                     <% end %>
                 </div>        
             </div>    
-        <div>
-    <div>
+        </div>
+    </div>
 </div>

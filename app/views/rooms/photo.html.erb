@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-        <%= render "rooms/sidebar"%>
+            <%= render "rooms/sidebar"%>
         </div>
         <div class="col-md-4">
             <div class="card mt-3" style="width: 50rem;">
@@ -12,14 +12,21 @@
                 <strong>
                 <div class="p-3">
                     <div class="p-3">
-                        <%= form_for @room do |f| %>
-
-                            
-
-                            <div class="row">
-                                <%= f.submit "Save", class: "btn btn-outline-success my-2 my-sm-0 ml-3" %>
+                        <%= form_for @room, url: room_photos_path(@room), method: 'post', html: {multipart: true} do |f| %>
+                            <div class="row file-upload">
+                                <div class="col-md-6 offset-md-4">
+                                    <%= file_field_tag "images[]", type: :file, multiple: true, class: "file-upload" %>
+                                </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-6 offset-md-4 mt-3">
+                                    <%= f.submit "Add Photos", class: "btn btn-outline-success my-2 my-sm-0 ml-3" %>
+                                </div>
+                            </div>
+                        
                         <% end %>
+                        <div class="border-bottom my-3"></div>
+                        <%= render "photos/photo_list" %>
                     </div>    
                 </div>    
             </div>   

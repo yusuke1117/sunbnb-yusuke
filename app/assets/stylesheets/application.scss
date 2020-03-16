@@ -62,21 +62,3 @@
     color:#000000;
     text-decoration:none;
       }
-
-  .file-upload {
-    position: relative;
-    overflow: hidden;
-  
-  & input[type="file"] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    cursor: inherit;
-    display: block;
-  }
-}

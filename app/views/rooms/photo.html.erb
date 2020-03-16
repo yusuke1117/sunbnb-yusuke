@@ -13,9 +13,9 @@
                 <div class="p-3">
                     <div class="p-3">
                         <%= form_for @room, url: room_photos_path(@room), method: 'post', html: {multipart: true} do |f| %>
-                            <div class="row file-upload">
+                            <div class="row">
                                 <div class="col-md-6 offset-md-4">
-                                    <%= file_field_tag "images[]", type: :file, multiple: true, class: "file-upload" %>
+                                    <%= file_field_tag "images[]", type: :file, multiple: true, class: "" %>
                                 </div>
                             </div>
                             <div class="row">

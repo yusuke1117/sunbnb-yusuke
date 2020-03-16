@@ -26,6 +26,7 @@ class RoomsController < ApplicationController
 
   def photo
     @room = Room.find(params[:id])
+    @photos = @room.photos
   end
 
   def amenity

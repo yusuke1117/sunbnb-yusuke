@@ -3,6 +3,8 @@ class AddAttachmentImageToPhotos < ActiveRecord::Migration[5.2]
     change_table :photos do |t|
       t.attachment :image
     end
+  end
+
   
 
   def self.down

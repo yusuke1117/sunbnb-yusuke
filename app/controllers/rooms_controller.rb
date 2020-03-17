@@ -24,7 +24,7 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
   end
 
-  def photo
+  def photo_upload
     @room = Room.find(params[:id])
     @photos = @room.photos
   end

@@ -5,7 +5,9 @@
                 <div class="card">
                     <%= image_tag photo.image.url, class: "card-img-top" %>
                     <div class="card-body">
-                        <i class="fa fa-trash float-right"></i>
+                        <%= link_to room_photo_path(photo.room_id, photo), remote: true, method: :delete, data: {confirm: "Are you sure?"} do %>
+                            <i class="fa fa-trash float-right"></i> 
+                        <% end %>
                     </div>
                 </div>
             </div>

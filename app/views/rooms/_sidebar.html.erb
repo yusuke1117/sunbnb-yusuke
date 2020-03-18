@@ -1,15 +1,18 @@
 <div class="card mt-3">
     <div class="card-body p-3">
-        <p><%= link_to "Listing", listing_room_path(current_user), class: "sidelink" %><i class="fa fa-check float-right"></i></p>
-        <p><%= link_to "Price", price_room_path(current_user), class: "sidelink"%><i class="fa fa-check float-right"></i></p>
-        <p><%= link_to "Description", description_room_path(current_user), class: "sidelink" %><i class="fa fa-check float-right"></i></p>
-    <p><%= link_to "Photos", photo_upload_room_path(current_user), class: "sidelink" %><i class="fa fa-check float-right"></i></p>
-        <p><%= link_to "Amenities", amenity_room_path(current_user), class: "sidelink" %><i class="fa fa-check float-right"></i></p>
-        <p class="mb-1"><%= link_to "Location", location_room_path(current_user), class: "sidelink" %><i class="fa fa-check float-right"></i></p>
+        <p><%= link_to "Listing", listing_room_path, class: "sidelink" %><span><i class="fa fa-check float-right"></i></span></p>
+        <p><%= link_to "Price", price_room_path, class: "sidelink"%><%= is_done?(@room.price) %></p>
+        <p><%= link_to "Description", description_room_path, class: "sidelink" %><%= is_done?(@room.name) %></p>
+        <p><%= link_to "Photos", photo_upload_room_path, class: "sidelink" %><%= is_done?(@room.photos) %></p>
+        <p><%= link_to "Amenities", amenity_room_path, class: "sidelink" %><span><i class="fa fa-check float-right"></i></span></p>
+        <p><%= link_to "Location", location_room_path, class: "sidelink" %><%= is_done?(@room.address) %></p>
         <%# <p class="mb-1"><%= link_to "Location", location_room_path(current_user), class: "sidelink" %><%# <i class="fa fa-times-circle float-right"></i></p> %>
         <div class="dropdown-divider"></div>
         <div class="col-md-6 offset-md-3 mt-3">
-            <%= link_to "Publish", new_room_path(current_user), class: "btn btn-outline-success" %>
+            <%= form_for @room do |f| %>
+                <%= f.hidden_field :is_active, value: true %>
+                <%= f.submit "Publish", class: "btn btn-outline-success", disabled: is_not_ready?(@room) %>
+            <% end %>
         </div>
     </div>
 </div>

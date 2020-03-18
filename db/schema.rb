@@ -33,12 +33,12 @@ ActiveRecord::Schema.define(version: 2020_03_13_022956) do
     t.string "bathroom_count"
     t.float "price"
     t.text "summary"
-    t.boolean "is_activity"
+    t.boolean "is_active"
     t.string "address"
     t.boolean "has_TV"
     t.boolean "has_kitchen"
     t.boolean "has_internet"
-    t.boolean "hasheating"
+    t.boolean "has_heating"
     t.boolean "has_air_conditioning"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

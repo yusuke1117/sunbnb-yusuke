@@ -1,0 +1,33 @@
+<div class=" container editprofile">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mt-3">
+                <div class="card-body m-auto">
+                    <p>Your Listing</p>
+                    <p>Your reservation</p>
+                    <p>Your Trips</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mt-3" style="width: 50rem;">
+                <strong><div class="card-header bg-success text-light text-center"></strong>
+                    Your Listing
+                </div>
+                <div class="card-body">
+                    <% @rooms.each do |room| %>
+                        <% if room.photos.any? %>
+                            <%= image_tag room.photos.first.image.url, class: "mr-5 profile_picture_index" %>
+                        <% else %>
+                            <%= image_tag "no-image.png", class: "mr-5 profile_picture_index2"  %>
+                        <% end %>
+                        <%= link_to room.name, listing_room_path(room) %>
+                        <%= link_to "Upload", listing_room_path(room),  class: "btn btn-outline-success my-2 my-sm-0 float-right" %>
+                        <div class="border-bottom my-3"></div>
+                    <% end %>
+                    
+                </div>    
+            </div>   
+        <div>
+    <div>
+</div>

@@ -1,7 +1,7 @@
 <div class="container">
     <div><%= image_tag "no-image.png", class: "container-fluid show_page_photo" %></div>
     <div class="row">
-        <div class="col-6">
+        <div class="col-8">
             <div class="row">
                 <div class="col-6">
                     <h1><%= @room.name %></h1>
@@ -15,20 +15,20 @@
             <hr>
             <div class="row mt-5">
                 <div class="col-3 text-center">
-                <i class="fa fa-home iconsize"></i>
-                <p><%= @room.home_type %></p>
+                    <i class="fa fa-home iconsize"></i>
+                    <p><%= @room.home_type %></p>
                 </div>
                 <div class="col-3 text-center">
-                <i class="fa fa-users iconsize"></i>
-                <p><%= @room.gest_count %></p>
+                    <i class="fa fa-users iconsize"></i>
+                    <p><%= @room.gest_count %> Guests</p>
                 </div>
                 <div class="col-3 text-center">
-                <i class="fa fa-bed iconsize"></i>
-                <p><%= @room.bedroom_count %></p>
+                    <i class="fa fa-bed iconsize"></i>
+                    <p><%= @room.bedroom_count %> Bedrooms</p>
                 </div>
                 <div class="col-3 text-center">
-                <i class="fa fa-bath iconsize"></i>
-                <p><%= @room.bathroom_count %></p>
+                    <i class="fa fa-bath iconsize"></i>
+                    <p><%= @room.bathroom_count %> Bathrooms</p>
                 </div>
             </div>
             <hr>
@@ -42,21 +42,22 @@
                 <div class="col-6">
                     <div class="row">
                         <div class="col-6">
-                            <span class="">TV</span>
+                            <span class="<%= 'line_through' unless @room.has_TV? %>">TV</span>
                         </div>
                         <div class="col-6">
-                            <span class="">Kitchen</span>
+                            <span class="<%= 'line_through' unless @room.has_kitchen? %>">Kitchen</span>
                         </div>
                         <div class="col-6">
-                            <span class="">Internet</span>
+                            <span class="<%= 'line_through' unless @room.has_internet? %>">Internet</span>
                         </div>
                         <div class="col-6">
-                            <span class="">Heating</span>
+                            <span class="<%= 'line_through' unless @room.has_heating? %>">Heating</span>
                         </div>
                         <div class="col-6">
-                            <span class="">Air Conditioner</span>
+                            <span class="<%= 'line_through' unless @room.has_air_conditioning? %>">Air Conditioner</span>
                         </div>
                     </div>
+                    <hr>
                 </div>
             </div>
             <hr>
@@ -102,6 +103,9 @@
             <div class="card">
                 <div class="card-header bg-success text-light text-center">
                     money
+                </div>
+                <div class="card-body">
+                    <%= button_to "booo",class: "btn btn-secondary" %>
                 </div>
             </div>
         </div>

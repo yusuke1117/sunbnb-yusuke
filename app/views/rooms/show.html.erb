@@ -1,0 +1,109 @@
+<div class="container">
+    <div><%= image_tag "no-image.png", class: "container-fluid show_page_photo" %></div>
+    <div class="row">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-6">
+                    <h1><%= @room.name %></h1>
+                    <h3><%= @room.address %></h3>
+                </div>
+                <div class="col-6 text-right">
+                    <div><%= image_tag avatar_url(@room.user), class: "rounded-circle profile_picture_show" %></div>
+                    <div class="mr-3 mt-2"><%= @room.user.name %></div>
+                </div>
+            </div>
+            <hr>
+            <div class="row mt-5">
+                <div class="col-3 text-center">
+                <i class="fa fa-home iconsize"></i>
+                <p><%= @room.home_type %></p>
+                </div>
+                <div class="col-3 text-center">
+                <i class="fa fa-users iconsize"></i>
+                <p><%= @room.gest_count %></p>
+                </div>
+                <div class="col-3 text-center">
+                <i class="fa fa-bed iconsize"></i>
+                <p><%= @room.bedroom_count %></p>
+                </div>
+                <div class="col-3 text-center">
+                <i class="fa fa-bath iconsize"></i>
+                <p><%= @room.bathroom_count %></p>
+                </div>
+            </div>
+            <hr>
+            <h3>About this listing</h3>
+            <h4>description</h4>
+            <br>
+            <div class="row">
+                <div class="col-4">
+                    <h3>Amenities</h3>
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <span class="">TV</span>
+                        </div>
+                        <div class="col-6">
+                            <span class="">Kitchen</span>
+                        </div>
+                        <div class="col-6">
+                            <span class="">Internet</span>
+                        </div>
+                        <div class="col-6">
+                            <span class="">Heating</span>
+                        </div>
+                        <div class="col-6">
+                            <span class="">Air Conditioner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="container"><h1>Review</h1>
+            </div>
+            <hr>
+            <div class="container">
+                <h1>picture</h1>
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <% @room.photos.each do |photo| %>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="<%= photo.id %>"></li>
+                        <% end %>
+                    </ol>
+                    <div class="carousel-inner">
+                        <% @room.photos.each do |photo| %>
+                            <div class="carousel-item <%= 'active' if photo.id == @room.photos.first.id %>">
+                                <%= image_tag photo.image.url, class:"d-block w-100" %>
+                            </div>
+                        <% end %>
+                    </div>
+
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <hr>
+            <div class="container"><h1>MAp</h1>
+            </div>
+            <hr>
+            <div class="container"><h1>????</h1>
+            </div>
+
+ 
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header bg-success text-light text-center">
+                    money
+                </div>
+            </div>
+        </div>
+    </div>      
+</div>

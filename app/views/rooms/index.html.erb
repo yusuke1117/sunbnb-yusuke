@@ -21,13 +21,14 @@
                         <% else %>
                             <%= image_tag "no-image.png", class: "mr-5 profile_picture_index2"  %>
                         <% end %>
-                        <%= link_to room.name, listing_room_path(room) %>
+                        <%= link_to room.name, room_path(room) %>
                         <%= link_to "Upload", listing_room_path(room),  class: "btn btn-outline-success my-2 my-sm-0 float-right" %>
                         <div class="border-bottom my-3"></div>
                     <% end %>
                     
-                </div>    
-            </div>   
+                </div>  
+                <div class="pagenate mt-1 text-center"><%= will_paginate %></div>   
+            </div>  
         <div>
     <div>
 </div>

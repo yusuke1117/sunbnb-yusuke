@@ -8,6 +8,9 @@ class Room < ApplicationRecord
   validates :bedroom_count, presence: true
   validates :bathroom_count, presence: true
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
 
   
 end

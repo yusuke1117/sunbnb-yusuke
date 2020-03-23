@@ -96,7 +96,7 @@
                 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrmXuImdRD6uPU91vHUXXaU-iCnaJpFjk"></script>
                 <script>
                     function initialize() {
-                        var location = {lat: Number("<%= @room.latitube %>"), lng: Number("<%= @room.longtitube%>")};
+                        var location = {lat: Number("<%= @room.latitude %>"), lng: Number("<%= @room.longitude%>")};
                         var map = new google.maps.Map(document.getElementByID('map'),{
                             center: location,
                             zoom: 5
@@ -108,7 +108,7 @@
                         });
 
                         var infoWindow = new google.maps.InfoWindow({
-                            content: <'div id="content"><%= image_tag @room.photos.first.image.url %></div>'
+                            content: '<div id="content"><%= image_tag @room.photos.first.image.url %></div>'
                         });
 
                         infoWindow.open(map, marker);

@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 2020_03_22_233415) do
     t.boolean "has_air_conditioning"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "latitube"
-    t.float "longtitube"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

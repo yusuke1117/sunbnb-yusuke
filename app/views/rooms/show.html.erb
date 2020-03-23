@@ -116,8 +116,6 @@
 
                     google.maps.event.addDomListener(window,'load', initialize);
                 </script>
-
-
             </div>
             <hr>
             <div class="container">
@@ -125,13 +123,13 @@
                 <div class="row pt-2 mb-5 pb-4">
                     <% if @room.nearbys %>
                         <% for room in @room.nearbys(10) %>
-                            <div class="col-md-4">
+                            <div class="col-md-5">
                                 <div class="card">
                                     <div class="card-header preview">
                                         <%= image_tag room.photos.first.image.url, width:"220",height:"300",class:"mx-auto"  %>
                                     </div>
                                     <div class="card-body">
-                                        <%= link_to room.listing_name, room %> <br/>
+                                        <%= link_to room.name, room %> <br/>
                                         (<%= room.distance.round(2) %> kms away)
                                     </div>
                                 </div>

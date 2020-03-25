@@ -21,7 +21,7 @@ Rails.application.routes.draw do
       get 'preview'
     end
     resources :photos, only: [:create, :destroy]
-    resources :registrations, only: [:create]
+    resources :reservations, only: [:create]
   end
 
 

@@ -54,18 +54,18 @@ class RoomsController < ApplicationController
   end
 
   def preload
-    today = data.today
+    today = Date.today
     reservations = @room.reservations.where("start_date >= ? OR end_date >= ?", today,today)
   
     render json: reservations
   end
 
   def preview
-    start_date = data.parse(params[:start_date])
-    end_date = data.parse(params[:end_date])
+    start_date = Date.parse(params[:start_date])
+    end_date = Date.parse(params[:end_date])
 
     output = {
-      confloct: has_conflict(start_date, end_date, @room)
+      conflict: has_conflict(start_date, end_date, @room)
     }
 
     render json: output

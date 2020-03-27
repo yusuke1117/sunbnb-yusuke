@@ -28,5 +28,8 @@ Rails.application.routes.draw do
   get '/trips', to:"reservations#your_trips"
 
   resources :users, only: [:show]
+
+  resources :guest_reviews, only: [:create, :destroy]
+  resources :host_reviews, only: [:create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

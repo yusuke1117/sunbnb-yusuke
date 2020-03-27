@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     resources :reservations, only: [:create]
   end
 
+  get '/reservations', to: "reservations#your_reservations"
+  get '/trips', to:"reservations#your_trips"
 
   resources :users, only: [:show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

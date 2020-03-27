@@ -1,13 +1,7 @@
 <div class=" container editprofile">
     <div class="row">
         <div class="col-md-4">
-            <div class="card mt-3">
-                <div class="card-body m-auto">
-                    <p>Your Listing</p>
-                    <p>Your reservation</p>
-                    <p>Your Trips</p>
-                </div>
-            </div>
+            <%= render "reservations/sidebar"%>
         </div>
         <div class="col-md-4">
             <div class="card mt-3" style="width: 50rem;">
@@ -29,6 +23,6 @@
                 </div>  
                 <div class="pagenate mt-1 text-center"><%= will_paginate %></div>   
             </div>  
-        <div>
-    <div>
+        </div>
+    </div>
 </div>

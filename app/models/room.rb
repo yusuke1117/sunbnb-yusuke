@@ -18,4 +18,12 @@ class Room < ApplicationRecord
   def average_rating
     guest_reviews.count == 0 ? 0 : guest_reviews.average(:star).round(2).to_i
   end
+
+  def cover_photo(size)
+    if self.photos.length > 0
+      self.photos[0].image.url(size)
+    else
+      "blank.jpg"
+    end
+  end
 end

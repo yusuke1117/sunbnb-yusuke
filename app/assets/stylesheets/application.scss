@@ -95,6 +95,61 @@
 
   #map {
     position : relative;
-    width : 700px;
+    width : 800px;
     height : 400px;
   }
+
+  // SEARCH
+#main {
+  height: 50%;
+  overflow: hidden;
+}
+
+#left {
+  padding: 10px 300px 10px 20px;
+  overflow: scroll;
+  height: 100%;
+}
+
+#right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 450px;
+  height: 100%;
+}
+
+.map_price {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #00A699;
+}
+
+.googlemap{
+  margin-top: 80px;
+}
+
+// HOME PAGE
+.discovery-card {
+  background-size: cover;
+  background-position: center;
+  height: 326px;
+}
+
+.card-header.preview {
+  padding: 0;
+
+  img {
+    width: 100%;
+  }
+}
+
+.top {
+  background: url(house.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 500px;
+  width: auto;
+}

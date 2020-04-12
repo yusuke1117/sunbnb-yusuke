@@ -31,5 +31,8 @@ Rails.application.routes.draw do
 
   resources :guest_reviews, only: [:create, :destroy]
   resources :host_reviews, only: [:create, :destroy]
+
+  get 'search' => 'pages#search'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

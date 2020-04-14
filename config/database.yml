@@ -53,7 +53,7 @@ production:
   pool: 5
   timeout: 5000
 
-  <<: *default
-  database: sunbnb-yusuke_production
-  username: sunbnb-yusuke
-  password: <%= ENV['SUNBNB-YUSUKE_DATABASE_PASSWORD'] %>
+  
+  # database: sunbnb-yusuke_production
+  # username: sunbnb-yusuke
+  # password: <%= ENV['SUNBNB-YUSUKE_DATABASE_PASSWORD'] %>

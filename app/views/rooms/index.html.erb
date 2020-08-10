@@ -1,4 +1,4 @@
-<div class=" container editprofile">
+<div class=" container editprofile mt-2 pb-4">
     <div class="row">
         <div class="col-md-4">
             <%= render "reservations/sidebar"%>
@@ -18,8 +18,7 @@
                         <%= link_to room.name, room_path(room) %>
                         <%= link_to "Upload", listing_room_path(room),  class: "btn btn-outline-success my-2 my-sm-0 float-right" %>
                         <div class="border-bottom my-3"></div>
-                    <% end %>
-                    
+                    <% end %>   
                 </div>  
                 <div class="pagenate mt-1 text-center"><%= will_paginate %></div>   
             </div>  

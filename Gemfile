@@ -92,4 +92,4 @@ gem 'geocoder', '~> 1.4'
 
 gem 'ransack', '~> 2.0'
 
-gem  'rails-jquery-autocomplete', github: 'lingceng/rails-jquery-autocomplete'
+gem 'rails-jquery-autocomplete', github: 'lingceng/rails-jquery-autocomplete'

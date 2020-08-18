@@ -1,4 +1,4 @@
-<div class="top">
+<div class="top">    
     <div class="container">
         <div class="row">
             <div class="card col-5 mt-5">
@@ -11,10 +11,10 @@
                         <br>
                         <div class="row">
                             <div class="col-md-6">
-                                <%= text_field_tag :start_date, params[:start_date], placeholder: "Start Date", class: "form-control datepicker" %>
+                                <%= text_field_tag :start_date, params[:start_date], placeholder: "Start Date", autocomplete: "off", class: "form-control datepicker" %>
                             </div>
                             <div class="col-md-6">
-                                <%= text_field_tag :end_date, params[:end_date], placeholder: "End Date", class: "form-control datepicker" %>
+                                <%= text_field_tag :end_date, params[:end_date], placeholder: "End Date", autocomplete: "off", class: "form-control datepicker" %>
                             </div>
                         </div>
                         <br/><br/>
@@ -31,7 +31,7 @@
     </div>
 </div>
 
-    <br/><hr/><br/>
+<br/><hr/><br/>
 <div class="container">
     <div><h3>Homes</h3></div>
     <br/>
@@ -43,7 +43,7 @@
                     <div class="card-header preview">
                         <%= image_tag room.photos.first.image.url %>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body homes">
                         <%= link_to room.name, room %>
                         $<%= room.price %> - <%= room.home_type %> - <%= pluralize(room.bedroom_count, "bed") %>
                         <div id="star_<%= room.id %>"></div><%= pluralize(room.average_rating, "review") %>
@@ -61,6 +61,7 @@
         <% end %>
     </div>
 
+    <br/><hr/><br/>
     <div><h3>Cities</h3></div>
     <br/>
 
@@ -92,6 +93,8 @@
             dateFormat: 'dd-mm-yy',
             minDate: 0,
             maxDate: '3m',
+            showOtherMonths: true,
+            selectOtherMonths: true,
             onSelect: function(selected) {
                 $('#end_date').datepicker("option", "minDate", selected);
                 $('#end_date').attr("disabled", false);
@@ -102,13 +105,16 @@
             dateFormat: 'dd-mm-yy',
             minDate: 0,
             maxDate: '3m',
+            showOtherMonths: true,
+            selectOtherMonths: true,
             onSelect: function(selected) {
                 $('#start_date').datepicker("option", "maxDate", selected);
             }
         });
 
         $(function() {
-        $('.ui-autocomplete').css('left', '50px');
+        $('.ui-autocomplete').css('top', '50px');
         });
     </script> 
 </div>
+<br/>

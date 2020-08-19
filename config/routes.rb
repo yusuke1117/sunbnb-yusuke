@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   }
 
-  resources :rooms do
+  resources :rooms do 
     member do
       get 'listing'
       get 'price'

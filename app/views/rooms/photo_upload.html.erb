@@ -13,7 +13,7 @@
                 <div class="p-3">
                     <%= form_for @room, url: room_photos_path(@room), method: 'post', html: {multipart: true} do |f| %>
                         <div class="row">
-                            <div class="col-md-3 offset-md-4 mt-3">
+                            <div class="col-md-4 offset-md-4 mt-3">
                                 <%= label_tag "images[]", "Select Photos", class: "btn btn-outline-success my-2 my-sm-0 ml-5"%>
                                 <%= file_field_tag "images[]", type: :file, multiple: true, class: "image_form" %>
                             </div>

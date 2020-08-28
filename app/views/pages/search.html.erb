@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <hr>
-                    
+
                     <div class="row">
                         <div class="col-md-4">
                             <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Entire Room
@@ -57,11 +57,15 @@
                                     <%= f.select :gest_count_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
                                                 id: "gest_count", prompt: "Select...", class: "form-control" %>
                             </div>
+                        </div>
+                        <div class="col-md-4">
                             <div class="form-group select">
                                 <label>Bedrooms</label>
                                     <%= f.select :bedroom_count_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
                                                 id: "bedroom", prompt: "Select...", class: "form-control" %>
                             </div>
+                        </div>
+                        <div class="col-md-4">    
                             <div class="form-group select">
                                 <label>Bathrooms</label>
                                     <%= f.select :bathroom_count_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],

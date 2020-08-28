@@ -136,6 +136,13 @@
 
   .input[type=checkbox]{
     border: 1px solid rgb(40, 161, 46);
+    background-color: white;
+    height: 1.25em;
+    width: 1.25em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    vertical-align: top;
   }
 
   .form-control.green {

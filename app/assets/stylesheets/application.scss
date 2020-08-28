@@ -6,9 +6,7 @@
   background-color: rgba(241, 241, 241, 0.938);
 }
 
-.footer_position{
-  position: relative;
-  bottom: 0;
+.footer{
   background-color: rgba(241, 241, 241, 0.938);
 }
 
@@ -123,7 +121,7 @@
 
   #right {
     position: fixed;
-    top: 0;
+    top: 69px;
     right: 0;
     width: 450px;
     height: 100%;
@@ -134,10 +132,6 @@
     font-size: 16px;
     font-weight: 600;
     color: #00A699;
-  }
-
-  .googlemap{
-    margin-top: 80px;
   }
 
 // HOME PAGE

@@ -114,9 +114,9 @@
     height: 100%;
   }
 
-  select {
+  .select {
     width : 100%;
-    border: 1px solid rgb(95, 218, 95);
+    border: 1px solid rgb(40, 161, 46);
     border-radius: 2px;
     padding: 10px;
     appearance: none;
@@ -128,16 +128,21 @@
     content: '\25bc';
     font-size: 1.2em;
     position: absolute;
-    color: rgb(95, 218, 95);
+    color: rgb(40, 161, 46);
     top: 42px;
     right: 30px;
     transform: scale(0.94, 0.62);
   }
 
-  .input[type="checkbox"]{
-    background-color: white;
-    border: 1px solid rgb(95, 218, 95);
+  input[type="checkbox"]{
+    border: 1px solid rgb(40, 161, 46);
   }
+
+  .form-controll.green {
+    border: 1px solid rgb(40, 161, 46);
+  }
+
+
 
   #right {
     position: fixed;

@@ -19,32 +19,32 @@
                         </div>
                         <div class="col-md-2">
                             <label>Min Price:</label>
-                            <%= f.text_field :price_gteq, class: "form-control" %>
+                            <%= f.text_field :price_gteq, class: "form-control　green" %>
                         </div>
                         <div class="col-md-2">
                             <label>Max Price:</label>
-                            <%= f.text_field :price_lteq, class: "form-control" %>
+                            <%= f.text_field :price_lteq, class: "form-control green" %>
                         </div>
                     </div>
                     <hr>
                     <div class="row">
-                        <div class="col-md-6">
-                            <%= text_field_tag :start_date, params[:start_date], readonly: true, placeholder: "Start Date", class: "form-control datepicker" %>
+                        <div class="col-md-6 border">
+                            <%= text_field_tag :start_date, params[:start_date], readonly: true, placeholder: "Start Date", class: "form-control green datepicker" %>
                         </div>
-                        <div class="col-md-6">
-                            <%= text_field_tag :end_date, params[:end_date], readonly: true, placeholder: "End Date", class: "form-control datepicker" %>
+                        <div class="col-md-6 border">
+                            <%= text_field_tag :end_date, params[:end_date], readonly: true, placeholder: "End Date", class: "form-control green datepicker" %>
                         </div>
                     </div>
                     <hr>
 
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-4 border">
                             <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Entire Room
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 border">
                             <%= check_box_tag "q[room_type_eq_any][]", "Private" %> Private
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 border">
                             <%= check_box_tag "q[room_type_eq_any][]", "Shared" %> Shared
                         </div>
                     </div>

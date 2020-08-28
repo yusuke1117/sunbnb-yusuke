@@ -25,31 +25,30 @@
                             <label>Max Price:</label>
                             <%= f.text_field :price_lteq, class: "form-control" %>
                         </div>
-                        <hr/>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <%= text_field_tag :start_date, params[:start_date], readonly: true, placeholder: "Start Date", class: "form-control datepicker" %>
-                            </div>
-                            <div class="col-md-6">
-                                <%= text_field_tag :end_date, params[:end_date], readonly: true, placeholder: "End Date", class: "form-control datepicker" %>
-                            </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <%= text_field_tag :start_date, params[:start_date], readonly: true, placeholder: "Start Date", class: "form-control datepicker" %>
                         </div>
-                        <hr/>
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Entire Room
-                            </div>
-                            <div class="col-md-4">
-                                <%= check_box_tag "q[room_type_eq_any][]", "Private" %> Private
-                            </div>
-                            <div class="col-md-4">
-                                <%= check_box_tag "q[room_type_eq_any][]", "Shared" %> Shared
-                            </div>
+                        <div class="col-md-6">
+                            <%= text_field_tag :end_date, params[:end_date], readonly: true, placeholder: "End Date", class: "form-control datepicker" %>
                         </div>
                     </div>
-                    <hr/>
+                    <hr>
+                    
+                    <div class="row">
+                        <div class="col-md-4">
+                            <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Entire Room
+                        </div>
+                        <div class="col-md-4">
+                            <%= check_box_tag "q[room_type_eq_any][]", "Private" %> Private
+                        </div>
+                        <div class="col-md-4">
+                            <%= check_box_tag "q[room_type_eq_any][]", "Shared" %> Shared
+                        </div>
+                    </div>
+                    <hr>
 
                     <div class="row">
                         <div class="col-md-4">
@@ -70,7 +69,7 @@
                             </div>
                         </div>
                     </div>
-                    <hr/>
+                    <hr>
 
                     <div class="row">
                         <div class="col-md-4">
@@ -89,7 +88,7 @@
                             <%= check_box_tag "q[has_air_conditioning_eq]", true %> Air Conditioning
                         </div>
                     </div>
-                    <hr/>
+                    <hr>
 
                     <div class="row text-center">
                         <%= f.submit "Search", class: "btn btn-outline-success" %>

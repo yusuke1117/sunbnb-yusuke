@@ -28,23 +28,23 @@
                     </div>
                     <hr>
                     <div class="row">
-                        <div class="col-md-6 border">
+                        <div class="col-md-6">
                             <%= text_field_tag :start_date, params[:start_date], readonly: true, placeholder: "Start Date", class: "form-control green datepicker" %>
                         </div>
-                        <div class="col-md-6 border">
+                        <div class="col-md-6">
                             <%= text_field_tag :end_date, params[:end_date], readonly: true, placeholder: "End Date", class: "form-control green datepicker" %>
                         </div>
                     </div>
                     <hr>
 
                     <div class="row">
-                        <div class="col-md-4 border">
+                        <div class="col-md-4">
                             <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Entire Room
                         </div>
-                        <div class="col-md-4 border">
+                        <div class="col-md-4">
                             <%= check_box_tag "q[room_type_eq_any][]", "Private" %> Private
                         </div>
-                        <div class="col-md-4 border">
+                        <div class="col-md-4">
                             <%= check_box_tag "q[room_type_eq_any][]", "Shared" %> Shared
                         </div>
                     </div>

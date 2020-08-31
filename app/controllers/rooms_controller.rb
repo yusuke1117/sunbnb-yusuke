@@ -1,9 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :set_room, except: [:index, :new, :create, :autocomplete_room_address]
-  before_action :authenticate_user!, except: [:show, :autocomplete_room_address]
-  before_action :is_authorized, only: [:listing, :pricing, :description, 
-                                      :photo_upload, :amenities, :location, :update]
-  autocomplete :room, :address, full: true, where: {active: 1}, unique: true
+  before_action :set_room, except: [:index, :new, :create]
   
   
   def new

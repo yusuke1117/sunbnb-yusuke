@@ -1,4 +1,4 @@
-<div class="top">    
+<div class="top"> 
     <div class="container">
         <div class="row">
             <div class="card col-5 mt-5">
@@ -37,28 +37,7 @@
     <br/>
 
     <div class="row">
-        <% @rooms.each do |room| %>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header preview">
-                        <%= image_tag room.photos.first.image.url %>
-                    </div>
-                    <div class="card-body homes">
-                        <%= link_to room.name, room %>
-                        $<%= room.price %> - <%= room.home_type %> - <%= pluralize(room.bedroom_count, "bed") %>
-                        <div id="star_<%= room.id %>"></div><%= pluralize(room.average_rating, "review") %>
-                    </div>
-                </div>
-            </div>
-
-            <script>
-                $('#star_<%= room.id %>').raty({
-                    path: '/assets',
-                    readOnly: true,
-                    score: <%= room.average_rating %>
-                });
-            </script>
-        <% end %>
+       <%= render partial: "rooms/rooms_list", locals: {rooms: @rooms} %>
     </div>
 
     <br/><hr/><br/>

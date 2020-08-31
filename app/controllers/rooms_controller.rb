@@ -78,13 +78,21 @@ class RoomsController < ApplicationController
 
 
   private
+    def is_conflict(start_date, end_date, room)
+      check = room.reservations.where("? < start_date AND end_date < ?", start_date, end_date)
+      check.size > 0 ? true : false
+    end
+
     def set_room
       @room = Room.find(params[:id])
     end
 
-    def has_conflict(start_date, end_date, room)
-      check = room.reservations.where("? < start_date AND end_date < ? ", start_date, end_date)
-      check.size > 0 ? true : false
+    def is_authorized
+      redirect_to root_path, alert: "You don't have permission" unless current_user.id == @room.user_id
+    end
+
+    def is_ready_room
+      !@room.active && !@room.price.blank? && !@room.listing_name.blank? && !@room.photos.blank? && !@room.address.blank?
     end
 
     def room_params

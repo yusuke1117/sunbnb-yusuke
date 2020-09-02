@@ -95,6 +95,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
-  config.action_mailer.default_url_options = { :host => 'example.com' }
+  config.action_mailer.default_url_options = { :host => 'https://airbnb-imamura.herokuapp.com' }
 
 end

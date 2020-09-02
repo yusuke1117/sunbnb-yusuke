@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'registration'},
     controllers: {omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations'}
 
-  resources :rooms do 
+    resources :rooms, except: [:edit] do
     member do
       get 'listing'
       get 'price'
@@ -17,6 +17,11 @@ Rails.application.routes.draw do
       get 'preload'
       get 'preview'
     end
+
+    collection do
+      get 'autocomplete_room_address'
+    end
+    
     resources :photos, only: [:create, :destroy]
     resources :reservations, only: [:create]
   end

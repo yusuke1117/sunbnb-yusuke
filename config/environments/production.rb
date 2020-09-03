@@ -95,6 +95,19 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
-  config.action_mailer.default_url_options = { :host => 'https://airbnb-yusuke.herokuapp.com' }
+  config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  config.action_mailer.default_url_options = { host: 'https://airbnb-yusuke.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.mailgun.org',
+    port: 587,
+    domain: Rails.application.credentials.mailgun[:domain],
+    authentication: 'plain',
+    user_name: Rails.application.credentials.mailgun[:user_name],
+    password: Rails.application.credentials.mailgun[:password]
+  }
+  
+  
+  
 
 end

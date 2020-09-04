@@ -66,29 +66,31 @@
             <hr>
             <div class="container">
                 <h1>picture</h1>
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <% @room.photos.each do |photo| %>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="<%= photo.id %>"></li>
-                        <% end %>
-                    </ol>
-                    <div class="carousel-inner">
-                        <% @room.photos.each do |photo| %>
-                            <div class="carousel-item <%= 'active' if photo.id == @room.photos.first.id %>">
-                                <%= image_tag photo.image.url, class:"d-block w-100" %>
-                            </div>
-                        <% end %>
-                    </div>
+                <% if @photos.length > 0 %>
+                    <div id="carouselSlide" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <% @photos.each do |photo| %>
+                                <li data-target="#carouselSlide" data-slide-to="<%= photo.id %>"></li>
+                            <% end %>
+                        </ol>
+                        <div class="carousel-inner">
+                            <% @photos.each do |photo| %>
+                                <div class="carousel-item <%= 'active' if photo.id == @room.photos.first.id %>">
+                                    <%= image_tag photo.image.url, class:"d-block w-100" %>
+                                </div>
+                            <% end %>
+                        </div>
 
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
+                        <a class="carousel-control-prev" href="#carouselSlide" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselSlide" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                <% end %>
             </div>
             <hr>
             <div class="container"><h1>MAP</h1>
@@ -126,7 +128,7 @@
                             <div class="col-md-5">
                                 <div class="card">
                                     <div class="card-header preview">
-                                        <%= image_tag room.photos.first.image.url, width:"220",height:"300",class:"mx-auto"  %>
+                                        <%= image_tag room.photos.first.image.url, width:"220",height:"300",class:"mx-auto" %>
                                     </div>
                                     <div class="card-body">
                                         <%= link_to room.name, room %> <br/>

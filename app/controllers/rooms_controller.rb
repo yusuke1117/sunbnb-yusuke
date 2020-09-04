@@ -70,7 +70,7 @@ class RoomsController < ApplicationController
     end_date = Date.parse(params[:end_date])
 
     output = {
-      conflict: has_conflict(start_date, end_date, @room)
+      conflict: is_conflict(start_date, end_date, @room)
     }
 
     render json: output

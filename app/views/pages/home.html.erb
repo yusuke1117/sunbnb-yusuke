@@ -45,7 +45,7 @@
                     </div>
                     <div class="card-body homes">
                         <%= link_to room.name, room %>
-                        $<%= room.price %> - <%= room.home_type %> - <%= pluralize(room.bedroom_count, "bed") %>
+                        <span>$<%= room.price %> - <%= room.home_type %> - <%= pluralize(room.bedroom_count, "bed") %></span>
                         <div id="star_<%= room.id %>"></div><%= pluralize(room.average_rating, "review") %>
                     </div>
                 </div>

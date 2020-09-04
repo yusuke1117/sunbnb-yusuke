@@ -5,38 +5,38 @@
                 <div class="card-header bg-success text-light text-center">
                     Create your beautiful place
                 </div>
-            <strong>
-            <div class="p-3">
-                <%= form_for @room do |f| %>
-                    <div class="row">
-                        <div class="col-4 select">
-                            <%= f.label :Home_Type %>
-                            <p><%= f.select :home_type, [["Apartment","Apartment"], ["House","House"], ["Bed & Breakfast","Bed & Breakfast"]], prompt: "select...", class:"form-control" %></p>
+                <div class="p-3">
+                    <%= form_for @room do |f| %>
+                        <div class="row">
+                            <div class="col-4 select">
+                                <%= f.label :Home_Type %>
+                                <p><%= f.select :home_type, [["Apartment","Apartment"], ["House","House"], ["Bed & Breakfast","Bed & Breakfast"]], prompt: "select...", class:"form-control" %></p>
+                            </div>
+                            <div class="col-4 select">
+                                <%= f.label :Room_Type %>
+                                <p><%= f.select :room_type, [["Entire","Entire"], ["Private","Private"], ["Shared","Shared"]], prompt: "select...", class:"form-control" %></p>
+                            </div>
+                            <div class="col-4 select">
+                                <%= f.label :Accommodate %>
+                                <p><%= f.select :gest_count, [["1",1], ["2",2], ["3",3], ["4+",4]], prompt: "select...", class:"form-control" %></p>
+                            </div>
                         </div>
-                        <div class="col-4 select">
-                            <%= f.label :Room_Type %>
-                            <p><%= f.select :room_type, [["Entire","Entire"], ["Private","Private"], ["Shared","Shared"]], prompt: "select...", class:"form-control" %></p>
+                        <div class="row">
+                            <div class="col-4 select">
+                                <%= f.label :Bedrooms %>
+                                <p><%= f.select :bedroom_count, [["1",1], ["2",2], ["3",3], ["4+",4]], prompt: "select...", class:"form-control" %></p>
+                            </div>
+                            <div class="col-4 select">
+                                <%= f.label :Bathrooms %>
+                                <p><%= f.select :bathroom_count, [["1",1], ["2",2], ["3",3], ["4+",4]], prompt: "select...", class:"form-control" %></p>
+                            </div>
                         </div>
-                        <div class="col-4 select">
-                            <%= f.label :Accommodate %>
-                            <p><%= f.select :gest_count, [["1",1], ["2",2], ["3",3], ["4+",4]], prompt: "select...", class:"form-control" %></p>
+                        <div class="row">
+                            <%= f.submit "Create rooms", class: "btn btn-outline-success my-2 my-sm-0 ml-3" %>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-4 select">
-                            <%= f.label :Bedrooms %>
-                            <p><%= f.select :bedroom_count, [["1",1], ["2",2], ["3",3], ["4+",4]], prompt: "select...", class:"form-control" %></p>
-                        </div>
-                        <div class="col-4 select">
-                            <%= f.label :Bathrooms %>
-                            <p><%= f.select :bathroom_count, [["1",1], ["2",2], ["3",3], ["4+",4]], prompt: "select...", class:"form-control" %></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <%= f.submit "Create rooms", class: "btn btn-outline-success my-2 my-sm-0 ml-3" %>
-                    </div>
-                <% end %>
-            </div>    
+                    <% end %>
+                </div> 
+            </strong>   
         </div>   
     </div>
 </div>
